@@ -3,7 +3,9 @@
     margin: 0;
     padding: 0;
     font-family: 'Kumbh Sans', sans-serif;
-    /* overflow-x: hidden; */
+}
+body{
+    background-color: #131313;
 }
 /* ########################## Navbar ########################## */
 .navbar{
@@ -16,6 +18,11 @@
     position: sticky;
     top:0;
     z-index: 999;
+    opacity: 0;
+    animation-name: swipe-in-from-top;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 .navbar__container {
@@ -226,6 +233,11 @@
     max-width: 1300px;
     padding: 0 50px;
 }
+.main__content{
+    opacity: 0;
+    animation: swipe-in-from-left 1s ease-in-out forwards;
+}
+
 .main__content h1{
     font-size: 4rem;
     background-color: #1e6cff;
@@ -293,6 +305,12 @@
 
 .main__img--container{
     text-align: center;
+    opacity: 0;
+    animation-name: swipe-in-from-right;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
 }
 #main__img{
     height: 80%;
@@ -550,6 +568,13 @@
     margin: 0 auto;
     padding: 0 50px;
 }
+.abouttext{
+    opacity: 0;
+    animation-name: swipe-in-from-left;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
 .about__container h1{
     background-color: #0084ff;
     background-image: linear-gradient(to right, #0011ff 0%, #00b7ff 100%);
@@ -589,6 +614,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    opacity: 0;
+    animation-name: swipe-in-from-right;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 .about__img{
     width: 100%;
@@ -679,6 +708,11 @@
     color: #fff;
     background-color: #1d1d1d;
     transition: 0.3s ease-in;
+    opacity: 0;
+    animation-name: swipe-in-from-left;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.75s;
 }
 .updates__card h2{
     margin-top: 10px;
@@ -715,4 +749,67 @@
     transform: scale(1.05);
     transition: 0.3s ease-in;
     cursor: pointer;
+}
+.updates__title{
+    opacity: 0;
+    animation-name: swipe-in-from-top;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.updates__para{
+    opacity: 0;
+    animation-name: swipe-in-from-right;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+/* ########################## Animations ########################## */
+
+@keyframes swipe-in-from-left{
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes swipe-in-from-right{
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes swipe-in-from-top{
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes swipe-in-from-bottom{
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
